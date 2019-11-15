@@ -3,20 +3,20 @@ import PropTypes from 'prop-types'
 /* Style Components */
 import { Container } from './styled';
 
-const Buffer = props => {
+const Buffering = ({ buffer }) => {
   return (
     <Container>
-      ...
+      {buffer}
     </Container>
   )
 }
 
-Buffer.propTypes = {
-  props: PropTypes.oneOfType([PropTypes.object]),
+Buffering.propTypes = {
+  props: PropTypes.string,
 }
 
-Buffer.defaultProps = {
-  props: {},
+Buffering.defaultProps = {
+  props: 'Loading...',
 };
 
 export default Buffer

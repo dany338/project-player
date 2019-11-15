@@ -1,27 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
 /* Style Components */
-import { Container } from './styled';
+import { GlobalStyle } from './styled';
 /* Components */
 import Cover from '../../pages/Cover';
+import ErrorBoundary from '../../components/ErrorBoundary';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-  }
-`
 
 const App = () => {
   return (
+    <ErrorBoundary>
       <Router>
         <GlobalStyle />
-        <div className="container">
-          <Switch>
-            <Route path="/" exact component={Cover} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/" exact component={Cover} />
+        </Switch>
       </Router>
+    </ErrorBoundary>
   )
 }
 

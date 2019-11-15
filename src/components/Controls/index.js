@@ -6,7 +6,21 @@ import { Container } from './styled';
 const Controls = props => {
   return (
     <Container>
-      ...
+      <div className="control">
+        <div className="button" onClick={() => console.log('<')}>
+          <i className="fas fa-backward"></i>
+        </div>
+      </div>
+      <div className="control">
+        <div className="button" onClick={() => console.log('play')}>
+          <i className="fa fa-play"></i>
+        </div>
+      </div>
+      <div className="control">
+        <div className="button" onClick={() => console.log('>')}>
+          <i className="fas fa-forward"></i>
+        </div>
+      </div>
     </Container>
   )
 }

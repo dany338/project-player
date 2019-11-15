@@ -6,7 +6,9 @@ import { Container } from './styled';
 const Area = props => {
   return (
     <Container>
-      ...
+      <div className="ins-time"></div>
+      <div className="s-hover"></div>
+      <div className="seek-bar" style={{ width: '0px'}}></div>
     </Container>
   )
 }

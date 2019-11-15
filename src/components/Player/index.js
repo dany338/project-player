@@ -2,21 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 /* Style Components */
 import { Container } from './styled';
+/* Components */
+import Track from '../Track';
+import Album from '../Album';
+import Controls from '../Controls';
 
-const Player = props => {
+const Player = ({ buffer }) => {
   return (
     <Container>
-      ...
+      <div className="player-track">
+        <Track />
+      </div>
+      <div className="player-content">
+        <Album buffer={buffer}/>
+        <Controls />
+      </div>
     </Container>
   )
 }
 
 Player.propTypes = {
-  props: PropTypes.oneOfType([PropTypes.object]),
+  buffer: PropTypes.string,
 }
 
 Player.defaultProps = {
-  props: {},
+  buffer: 'Loading...',
 };
 
 export default Player

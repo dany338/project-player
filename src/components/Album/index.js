@@ -2,21 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 /* Style Components */
 import { Container } from './styled';
+/* Components */
+import Buffer from '../Buffer';
 
-const Album = props => {
+const Album = ({ buffer }) => {
   return (
     <Container>
-      ...
+      <Buffer id="buffer-box" buffer={buffer} />
     </Container>
   )
 }
 
 Album.propTypes = {
-  props: PropTypes.oneOfType([PropTypes.object]),
+  buffer: PropTypes.string,
 }
 
 Album.defaultProps = {
-  props: {},
+  buffer: 'Loading...',
 };
 
 

@@ -3,25 +3,23 @@ import PropTypes from 'prop-types'
 /* Style Components */
 import { Container } from './styled';
 /* Components */
-import Area from '../Area';
+import Buffer from '../Buffer';
 
-const Track = props => {
+const Content = props => {
   return (
     <Container>
-      <div className="album-name"></div>
-      <div className="track-name"></div>
-      <div className="track-time"></div>
-      <Area />
+      <Buffer id="buffer-box" />
     </Container>
   )
 }
 
-Track.propTypes = {
+Content.propTypes = {
   props: PropTypes.oneOfType([PropTypes.object]),
 }
 
-Track.defaultProps = {
+Content.defaultProps = {
   props: {},
 };
 
-export default Track
+
+export default Content
