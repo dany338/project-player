@@ -1,5 +1,18 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Responsabilidad de cada componente
+Album: rendering el album en reproducción en forma de circulo
+
+Area: rendering sobre la barra de progreso de reproducción el tiempo de inicio, el hover de minutos y segundos y el tiempo final
+
+Track: rendering la pista mostrando el titulo y el autor
+
+Buffer: rendering el loading mientras se carga la pista
+
+Controls: rendering las opciones de atrás (anterior pista), play/stop y adelante (siguiente pista)
+
+Player: incluye los anteriores componentes para distribuirlos especialmente en sus posiciones correspondientes
+
 ## Available Scripts
 
 In the project directory, you can run:
