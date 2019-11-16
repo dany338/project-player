@@ -14,6 +14,10 @@ export const Container = styled.div`
     background-color: #003f63;
     transition: 0.3s ease top;
     z-index: 1;
+
+    &.active {
+      top: -92px;
+    }
   }
 
   .player-content {

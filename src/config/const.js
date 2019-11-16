@@ -5,6 +5,12 @@ export const wait = ms =>
     }, ms);
   });
 
+export const controlsBtn = {
+    backward: '<',
+    play: '||',
+    forward: '>',
+  }
+
 export const TRACKS_JSON_STATIC = 'tracks.json';
 
 export const FAKE_JSON_API = 'https://app.fakejson.com/q';

@@ -13,6 +13,11 @@ export const Container = styled.div`
   border-radius: 50%;
   overflow: hidden;
 
+  &.active {
+    top: -60px;
+    box-shadow: 0 0 0 4px #fff7f7, 0 30px 50px -15px #afb7c1;
+  }
+
   img, #buffer-box {
     transition: 0.1s linear all;
   }
