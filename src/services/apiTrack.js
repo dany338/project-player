@@ -1,4 +1,4 @@
-import { FAKE_JSON_API as URL_API, payload } from '../config/const';
+import { FAKE_JSON_API as URL_API, payload, TRACKS_JSON_STATIC } from '../config/const';
 /* Defined Endpoints */
 import endpoints from '../config/endpoints';
 
@@ -21,12 +21,12 @@ const fetchParams = (method, data = '') => {
 
 export const apiTrack = {
   getTracks: async () => {
-    try {
-      const response = await fetch(`${URL_API}${endpoints.cover.getTracks}`, fetchParams('POST', { ...payload}));
-      if (typeof response.ok === 'undefined') {
-        // throw new Error(response.status_message);
-        console.log(response.status_message);
-      }
+    try { // TRACKS_JSON_STATIC ${URL_API}${endpoints.cover.getTracks}
+      const response = await fetch(`${TRACKS_JSON_STATIC}`, fetchParams('POST', { ...payload}));
+      // if (typeof response.ok === 'undefined') {
+      //   // throw new Error(response.status_message);
+      //   console.log(response.status_message);
+      // }
       const data = await response.json();
       if (typeof data.error !== 'undefined') {
         // throw new Error(data.error);

@@ -4,7 +4,7 @@ export const Container = styled.div`
   background-color: #d7f0ff;
   cursor: pointer;
 
-  .ins-time {
+  #ins-time {
     position: absolute;
     top: -29px;
     color: #fff;
@@ -15,7 +15,7 @@ export const Container = styled.div`
     display: none;
   }
 
-  .s-hover {
+  #s-hover {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -24,7 +24,11 @@ export const Container = styled.div`
     z-index: 2;
   }
 
-  .seek-bar {
+  #ins-time, #s-hover {
+    background-color: #3b3d50;
+  }
+
+  #seek-bar {
     content: '';
     position: absolute;
     top: 0;

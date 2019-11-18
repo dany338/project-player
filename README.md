@@ -5,6 +5,8 @@ Album: rendering el album en reproducción en forma de circulo
 
 Area: rendering sobre la barra de progreso de reproducción el tiempo de inicio, el hover de minutos y segundos y el tiempo final
 
+Time: rendering los minutos transcurridos del track y los minutos finales del track
+
 Track: rendering la pista mostrando el titulo y el autor
 
 Buffer: rendering el loading mientras se carga la pista

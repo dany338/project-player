@@ -13,6 +13,7 @@ const initialState = {
   positionTrack: 0,
   trackSelected: {},
   isPlay: false,
+  audio: new Audio,
 };
 
 const cover = (state = initialState, { type, payload }) => {
@@ -29,7 +30,8 @@ const cover = (state = initialState, { type, payload }) => {
 			return {
 				...state,
 				data: payload.data,
-				isLoading: false,
+        isLoading: false,
+        trackSelected: payload.data[0]
 			};
     }
 
@@ -52,7 +54,8 @@ const cover = (state = initialState, { type, payload }) => {
 			return {
 				...state,
         positionTrack: payload,
-        trackSelected: state.data[payload]
+        trackSelected: state.data[payload],
+        isPlay: true,
       };
     }
 

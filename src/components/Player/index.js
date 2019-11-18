@@ -10,15 +10,14 @@ import Album from '../Album';
 import Controls from '../Controls';
 
 const Player = ({ buffer }) => {
-  const { coverPlay } = useCover();
-  const [classActive, setClassActive] = useState('');
+  const { isPlay } = useCover();
 
   return (
     <Container>
-      <div className={`player-track ${classActive}`}>
+      <div id="player-track" className={`${isPlay ? 'active' : ''}`}>
         <Track />
       </div>
-      <div className="player-content">
+      <div id="player-content">
         <Album buffer={buffer} />
         <Controls />
       </div>

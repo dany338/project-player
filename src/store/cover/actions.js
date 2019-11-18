@@ -3,7 +3,8 @@ import {
   COVER_LIST_SUCCESS,
   COVER_LIST_ERROR,
   COVER_ACTIVE_PLAY,
-  COVER_SELECTED_TRACK
+  COVER_SELECTED_TRACK,
+  COVER_ACTIVE_AUDIO
 } from './types';
 
 export const listCover = () => {
@@ -36,5 +37,12 @@ export const selectedTrack = position => {
 	return {
     type: COVER_SELECTED_TRACK,
     payload: position
+	};
+};
+
+export const activeAudio = audio => {
+	return {
+    type: COVER_ACTIVE_AUDIO,
+    payload: { audio }
 	};
 };

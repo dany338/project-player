@@ -13,13 +13,15 @@ const useCover = () => {
   // List of Dispatchers
 	const {
     getCoverRequest,
-    coverPlay
+    coverPlay,
+    coverAudio
   } = dispatchers;
 
   // Bind Actions
 	const coverActions = bindActions({
     getCoverRequest,
-    coverPlay
+    coverPlay,
+    coverAudio
   }, dispatch);
 
   return { ...cover, ...coverActions };

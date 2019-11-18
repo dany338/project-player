@@ -5,7 +5,7 @@ export const Container = styled.div`
   height: 100%;
   z-index: 3;
 
-  .player-track {
+  #player-track {
     position: absolute;
     top: 0;
     right: 15px;
@@ -20,7 +20,7 @@ export const Container = styled.div`
     }
   }
 
-  .player-content {
+  #player-content {
     position: relative;
     height: 100%;
     background-color: #fff;

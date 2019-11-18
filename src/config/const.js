@@ -23,7 +23,11 @@ export const payload = {
     id: "numberInt",
     name: "nameFirst",
     autor: "personTitle",
-    image: "",
+    image: {
+      fileName: "fileName",
+      fileExtension: "fileExtension",
+      fileMIME: "fileMIME"
+    },
     track: {
       fileName: "fileName",
       fileExtension: "fileExtension",
@@ -32,3 +36,14 @@ export const payload = {
     _repeat: 30
   }
 };
+
+export const initPlayer = (trackSelected, playbtn) => {
+  const { track } = trackSelected;
+  let audio = new Audio();
+  audio.loop = false;
+  audio.src = track;
+  if(playbtn) audio.play();
+  else if(!playbtn) audio.pause();
+  return audio;
+}
+

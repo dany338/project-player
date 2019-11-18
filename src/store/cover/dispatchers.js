@@ -3,7 +3,8 @@ import {
   listSuccess,
   listFailed,
   activePlay,
-  selectedTrack
+  selectedTrack,
+  activeAudio
 } from './actions';
 
 import * as TrackServices from "../../services";
@@ -14,7 +15,7 @@ export const getCoverRequest = () => {
 		try {
       const data = await TrackServices.apiTrack.getTracks();
       console.log('getCoverRequest data', data);
-			dispatch(listSuccess(data.docs));
+			dispatch(listSuccess(data));
 		} catch (error) {
 			dispatch(listFailed(error));
 		}
@@ -45,6 +46,16 @@ export const coverNextTrack = position => {
   return (dispatch) => {
     try {
       dispatch(selectedTrack(position));
+    } catch (error) {
+			console.log(error);
+		}
+  };
+};
+
+export const coverAudio = audio => {
+  return (dispatch) => {
+    try {
+      dispatch(activeAudio(audio));
     } catch (error) {
 			console.log(error);
 		}

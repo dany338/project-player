@@ -8,7 +8,7 @@ import { Container } from './styled';
 import { controlsBtn } from '../config/const';
 
 const Controls = props => {
-  const { coverPlay, coverAntTrack, coverNextTrack, isPlay, positionTrack } = useCover();
+  const { coverPlay, coverAntTrack, coverNextTrack, coverAudio, isPlay, positionTrack, trackSelected } = useCover();
   const [classbtn, setClassbtn] = useState('fas fa-play');
   const [playbtn, setPlaybtn] = useState(false);
 
@@ -20,7 +20,7 @@ const Controls = props => {
       }
 
       case controlsBtn.play: {
-        setPlaybtn(isPlay);
+        setPlaybtn(!playbtn);
         const newClassbtn = isPlay ? 'fas fa-pause' : 'fas fa-play';
         setClassbtn(newClassbtn);
         coverPlay();
@@ -33,7 +33,7 @@ const Controls = props => {
       }
 
       default: {
-        return true;
+        break;
       }
     }
   }
