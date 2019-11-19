@@ -14,6 +14,8 @@ const useCover = () => {
 	const {
     getCoverRequest,
     coverPlay,
+    coverAntTrack,
+    coverNextTrack,
     coverAudio
   } = dispatchers;
 
@@ -21,6 +23,8 @@ const useCover = () => {
 	const coverActions = bindActions({
     getCoverRequest,
     coverPlay,
+    coverAntTrack,
+    coverNextTrack,
     coverAudio
   }, dispatch);
 

@@ -21,8 +21,9 @@ const fetchParams = (method, data = '') => {
 
 export const apiTrack = {
   getTracks: async () => {
-    try { // TRACKS_JSON_STATIC ${URL_API}${endpoints.cover.getTracks}
-      const response = await fetch(`${TRACKS_JSON_STATIC}`, fetchParams('POST', { ...payload}));
+    apiHeaders = { ...apiHeaders, 'Content-Type': 'application/json' }
+    try { // TRACKS_JSON_STATIC ${URL_API}${endpoints.cover.getTracks} , { ...payload}
+      const response = await fetch(`${TRACKS_JSON_STATIC}`, fetchParams('GET'));
       // if (typeof response.ok === 'undefined') {
       //   // throw new Error(response.status_message);
       //   console.log(response.status_message);

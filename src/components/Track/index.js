@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
 /* Hooks */
 import { useCover } from '../../hooks';
@@ -11,12 +11,22 @@ import Time from '../Time';
 const Track = props => {
   const [nameText, setNameText] = useState('');
   const [autorText, setAutorText] = useState('');
-  const { trackSelected } = useCover();
-  if(Object.keys(trackSelected).length !== 0) {
-    const { name, autor } = trackSelected;
-    setNameText(name);
-    setAutorText(autor);
-  }
+  const { isPlay, trackSelected } = useCover();
+
+  const updateValues = useCallback(() => {
+    if(Object.keys(trackSelected).length !== 0) {
+      const { name, autor } = trackSelected;
+      setNameText(name);
+      setAutorText(autor);
+    }
+  }, [trackSelected]);
+
+  useEffect(() => {
+    console.log("useEffect Track 1", isPlay);
+    if(isPlay) {
+      updateValues();
+    }
+  }, [isPlay, updateValues]);
 
   return (
     <Container>

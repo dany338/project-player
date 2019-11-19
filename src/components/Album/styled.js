@@ -33,7 +33,7 @@ export const Container = styled.div`
     box-shadow: 0 0 0 4px #fff7f7, 0 30px 50px -15px #afb7c1;
   }
 
-  img, #buffer-box {
+  img {
     transition: 0.1s linear all;
   }
 
@@ -51,5 +51,16 @@ export const Container = styled.div`
       opacity: 1;
       z-index: 1;
     }
+
+    &.play {
+      z-index: 1;
+      animation: rotateAlbumArt 3s linear 0s infinite forwards;
+    }
+  }
+
+  @keyframes rotateAlbumArt
+  {
+      0%{ transform: rotateZ(0); }
+      100%{ transform: rotateZ(360deg); }
   }
 `;

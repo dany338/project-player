@@ -3,7 +3,8 @@ import {
   COVER_LIST_SUCCESS,
   COVER_LIST_ERROR,
   COVER_ACTIVE_PLAY,
-  COVER_SELECTED_TRACK
+  COVER_SELECTED_TRACK,
+  COVER_ACTIVE_AUDIO
 } from './types';
 
 const initialState = {
@@ -56,6 +57,13 @@ const cover = (state = initialState, { type, payload }) => {
         positionTrack: payload,
         trackSelected: state.data[payload],
         isPlay: true,
+      };
+    }
+
+    case COVER_ACTIVE_AUDIO: {
+			return {
+				...state,
+        audio: payload.audio,
       };
     }
 

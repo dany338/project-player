@@ -17,4 +17,9 @@ export const Container = styled.div`
   background-color: rgba(255, 255, 255, 0.19);
   opacity: 0;
   z-index: 2;
+  transition: 0.1s linear all;
+
+  &.load {
+    opacity: 1;
+  }
 `;

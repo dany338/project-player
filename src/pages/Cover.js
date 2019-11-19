@@ -5,6 +5,7 @@ import { useCover } from '../hooks';
 import { Container } from './styled';
 /* Components */
 import Player from '../components/Player';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 const Cover = () => {
   const [loader, setLoader] = useState(false);
@@ -15,16 +16,18 @@ const Cover = () => {
   }, [getCoverRequest]);
 
   useEffect(() => {
-    console.log('useEffect data');
-    loadTracks();
-  }, [loadTracks]);
+    console.log('useEffect data', data);
+    if(data.length === 0) loadTracks();
+  }, [loadTracks, data]);
 
   return (
-    <Container>
-      <div className="bg-artwork"></div>
-      <div className="bg-layer"></div>
-      <Player buffer={'Buffering ...'} />
-    </Container>
+    <ErrorBoundary>
+      <Container>
+        <div className="bg-artwork"></div>
+        <div className="bg-layer"></div>
+        <Player buffer={'Buffering ...'} />
+      </Container>
+    </ErrorBoundary>
   )
 }
 

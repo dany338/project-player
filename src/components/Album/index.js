@@ -1,20 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 /* Hooks */
 import { useCover } from '../../hooks';
 /* Style Components */
 import { Container } from './styled';
 /* Components */
-import Buffer from '../Buffer';
+import Buffering from '../Buffering';
 
 const Album = ({ buffer }) => {
   const { isPlay, trackSelected } = useCover();
+
+  useEffect(() => {
+    console.log("useEffect Album 1", isPlay, trackSelected);
+  }, [isPlay, trackSelected]);
+
   return (
     <Container className={`${isPlay ? 'active' : ''}`}>
-      {(Object.keys(trackSelected).length !== 0) && (
-        <img src={trackSelected.image} id={trackSelected.id} className={`${isPlay ? 'active' : ''}`} alt="Album" />
+      {(Object.keys(trackSelected).length !== 0) ? (
+        <img src={trackSelected.image} id={trackSelected.id} className={`${isPlay ? 'play active' : 'active'}`} alt="Album" />
+      ) : (
+        <img src={'https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Amanecer_album_cover.jpg/220px-Amanecer_album_cover.jpg'} id="1" className="{'active'}" alt="Album" />
       )}
-      <Buffer id="buffer-box" buffer={buffer} />
+      <Buffering buffer={buffer} />
     </Container>
   )
 }
