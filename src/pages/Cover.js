@@ -8,15 +8,12 @@ import Player from '../components/Player';
 import ErrorBoundary from '../components/ErrorBoundary';
 
 const Cover = () => {
-  const [loader, setLoader] = useState(false);
   const { getCoverRequest, data } = useCover();
-  console.log('Cover data', data);
   const loadTracks = useCallback(() => {
     getCoverRequest();
   }, [getCoverRequest]);
 
   useEffect(() => {
-    console.log('useEffect data', data);
     if(data.length === 0) loadTracks();
   }, [loadTracks, data]);
 
